@@ -1,5 +1,7 @@
 package com.example.notifyme;
 
+import android.util.Patterns;
+
 public class Employer {
     private int id;
     private String name;
@@ -24,7 +26,9 @@ public class Employer {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if(Patterns.EMAIL_ADDRESS.matcher(name).matches()) {
+            this.name = name;
+        }
     }
 
     public double getSalary() {
