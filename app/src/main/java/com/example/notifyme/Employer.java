@@ -26,7 +26,7 @@ public class Employer {
     }
 
     public void setName(String name) {
-        if(Patterns.EMAIL_ADDRESS.matcher(name).matches()) {
+        if (Patterns.EMAIL_ADDRESS.matcher(name).matches()) {
             this.name = name;
         }
     }
@@ -36,6 +36,8 @@ public class Employer {
     }
 
     public void setSalary(double salary) {
-        this.salary = salary;
+        if (!(salary < 1000000 && salary > 1000000000)) {
+            this.salary = salary;
+        }
     }
 }
